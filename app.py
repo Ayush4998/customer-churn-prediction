@@ -281,7 +281,7 @@ st.markdown("<div class='section-header'><h2 style='margin: 0;'>Customer Informa
 col1, col2 = st.columns(2, gap="large")
 
 with col1:
-    st.markdown("### 👤 Demographics & Engagement")
+    st.markdown("### Demographics & Engagement")
     age = st.number_input("Age", min_value=18, max_value=100, value=35, help="Customer's age")
     gender = st.selectbox("Gender", options=['Male', 'Female'], help="Customer's gender")
     
@@ -290,7 +290,7 @@ with col1:
     last_interaction = st.number_input("Last Interaction (days ago)", min_value=0, max_value=365, value=5, help="Days since last customer interaction")
 
 with col2:
-    st.markdown("### 💼 Subscription & Financial")
+    st.markdown("### Subscription & Financial")
     subscription_type = st.selectbox("Subscription Type", options=['Basic', 'Standard', 'Premium'], help="Current subscription plan")
     contract_length = st.selectbox("Contract Length", options=['Monthly', 'Quarterly', 'Annual'], help="Contract duration")
     
@@ -369,7 +369,7 @@ if predict_button:
             with actions_col1:
                 st.markdown("""
                 <div class='metric-card'>
-                <h4 style='color: #1C2529; margin-top: 0;'>🚨 Immediate Actions</h4>
+                <h4 style='color: #1C2529; margin-top: 0;'>Immediate Actions</h4>
                 <ul style='color: #1C2529;'>
                 <li><b>Priority Contact:</b> Reach out within 24 hours</li>
                 <li><b>Personal Touch:</b> Assign dedicated account manager</li>
@@ -547,9 +547,6 @@ with st.sidebar:
     
     st.markdown("""
     <div class='dark-info-box' style='text-align: center;'>
-    <p style='margin: 0; font-size: 0.9rem;'>
-    Built using Streamlit & XGBoost 
-    </p>
     <p style='margin: 0; font-size: 0.9rem;'> 
     Project by - Ayush Goswami
     </p>
