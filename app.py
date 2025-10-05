@@ -260,11 +260,11 @@ def load_model():
 try:
     model, encoder = load_model()
 except FileNotFoundError:
-    st.error("⚠️ Model files not found. Please ensure 'customer_churn_xgboost_model.pkl' and 'encoder.pkl' are in the same directory.")
+    st.error("Model files not found. Please ensure 'customer_churn_xgboost_model.pkl' and 'encoder.pkl' are in the same directory.")
     st.stop()
 
 # Title and description with custom header
-st.markdown('<h1>🎯 Customer Churn Prediction Dashboard</h1>', unsafe_allow_html=True)
+st.markdown('<h1>Customer Churn Prediction Dashboard</h1>', unsafe_allow_html=True)
 st.markdown("""
 <div class='info-box'>
 <p style='text-align: center; font-size: 1.1rem; margin: 0; color: #1C2529;'>
@@ -276,7 +276,7 @@ st.markdown("""
 st.divider()
 
 # Create two columns for input
-st.markdown("<div class='section-header'><h2 style='margin: 0;'>📝 Customer Information</h2></div>", unsafe_allow_html=True)
+st.markdown("<div class='section-header'><h2 style='margin: 0;'>Customer Information</h2></div>", unsafe_allow_html=True)
 
 col1, col2 = st.columns(2, gap="large")
 
@@ -303,7 +303,7 @@ st.divider()
 # Prediction button
 col_btn1, col_btn2, col_btn3 = st.columns([1, 2, 1])
 with col_btn2:
-    predict_button = st.button("🔮 Predict Churn Risk", type="primary", use_container_width=True)
+    predict_button = st.button("Predict Churn Risk", type="primary", use_container_width=True)
 
 if predict_button:
     try:
@@ -318,7 +318,7 @@ if predict_button:
         prediction_proba = model.predict_proba(input_array)[0]
         
         # Display results
-        st.markdown("<div class='section-header'><h2 style='margin: 0;'>📊 Prediction Results</h2></div>", unsafe_allow_html=True)
+        st.markdown("<div class='section-header'><h2 style='margin: 0;'>Prediction Results</h2></div>", unsafe_allow_html=True)
         
         # Create three columns for metrics
         metric_col1, metric_col2, metric_col3 = st.columns(3)
@@ -326,7 +326,7 @@ if predict_button:
         with metric_col1:
             churn_prob = prediction_proba[1] * 100
             st.metric(
-                label="🎲 Churn Probability",
+                label="Churn Probability",
                 value=f"{churn_prob:.1f}%",
                 delta=f"{churn_prob - 50:.1f}%" if churn_prob > 50 else f"{churn_prob - 50:.1f}%",
                 delta_color="inverse"
@@ -342,7 +342,7 @@ if predict_button:
         with metric_col3:
             retention_prob = prediction_proba[0] * 100
             st.metric(
-                label="✅ Retention Probability",
+                label="Retention Probability",
                 value=f"{retention_prob:.1f}%"
             )
         
@@ -362,7 +362,7 @@ if predict_button:
             </div>
             """, unsafe_allow_html=True)
             
-            st.markdown("<div class='section-header'><h3 style='margin: 0;'>🎯 Recommended Retention Actions</h3></div>", unsafe_allow_html=True)
+            st.markdown("<div class='section-header'><h3 style='margin: 0;'>Recommended Retention Actions</h3></div>", unsafe_allow_html=True)
             
             actions_col1, actions_col2 = st.columns(2)
             
@@ -381,7 +381,7 @@ if predict_button:
             with actions_col2:
                 st.markdown("""
                 <div class='metric-card'>
-                <h4 style='color: #1C2529; margin-top: 0;'>💡 Strategic Moves</h4>
+                <h4 style='color: #1C2529; margin-top: 0;'>Strategic Moves</h4>
                 <ul style='color: #1C2529;'>
                 <li><b>Loyalty Program:</b> Enroll in VIP rewards tier</li>
                 <li><b>Service Audit:</b> Review and optimize their plan</li>
@@ -391,7 +391,7 @@ if predict_button:
                 """, unsafe_allow_html=True)
             
             # Risk factors analysis
-            st.markdown("<div class='section-header'><h3 style='margin: 0;'>⚡ Key Risk Factors Identified</h3></div>", unsafe_allow_html=True)
+            st.markdown("<div class='section-header'><h3 style='margin: 0;'>Key Risk Factors Identified</h3></div>", unsafe_allow_html=True)
             
             risk_factors = []
             
@@ -432,7 +432,7 @@ if predict_button:
                             border-left: 5px solid #17a2b8;
                             margin: 1rem 0;
                             box-shadow: 0 4px 8px rgba(28, 37, 41, 0.3);'>
-                    <p style='color: #A1D1B1; margin: 0;'>ℹ️ No major risk factors identified. Churn prediction based on pattern analysis.</p>
+                    <p style='color: #A1D1B1; margin: 0;'>No major risk factors identified. Churn prediction based on pattern analysis.</p>
                 </div>
                 """, unsafe_allow_html=True)
                 
@@ -449,14 +449,14 @@ if predict_button:
             </div>
             """, unsafe_allow_html=True)
             
-            st.markdown("<div class='section-header'><h3 style='margin: 0;'>💡 Growth & Retention Strategy</h3></div>", unsafe_allow_html=True)
+            st.markdown("<div class='section-header'><h3 style='margin: 0;'>Growth & Retention Strategy</h3></div>", unsafe_allow_html=True)
             
             strategy_col1, strategy_col2 = st.columns(2)
             
             with strategy_col1:
                 st.markdown("""
                 <div class='metric-card'>
-                <h4 style='color: #1C2529; margin-top: 0;'>🌟 Strengthen Relationship</h4>
+                <h4 style='color: #1C2529; margin-top: 0;'>Strengthen Relationship</h4>
                 <ul style='color: #1C2529;'>
                 <li><b>Regular Updates:</b> Keep them informed of new features</li>
                 <li><b>Appreciation:</b> Send thank you message or reward</li>
@@ -468,7 +468,7 @@ if predict_button:
             with strategy_col2:
                 st.markdown("""
                 <div class='metric-card'>
-                <h4 style='color: #1C2529; margin-top: 0;'>📈 Upsell Opportunities</h4>
+                <h4 style='color: #1C2529; margin-top: 0;'>Upsell Opportunities</h4>
                 <ul style='color: #1C2529;'>
                 <li><b>Premium Features:</b> Introduce advanced capabilities</li>
                 <li><b>Referral Program:</b> Encourage friend invitations</li>
@@ -479,7 +479,7 @@ if predict_button:
 
         
         # Customer Profile Summary
-        st.markdown("<div class='section-header'><h3 style='margin: 0;'>📈 Customer Profile Summary</h3></div>", unsafe_allow_html=True)
+        st.markdown("<div class='section-header'><h3 style='margin: 0;'>Customer Profile Summary</h3></div>", unsafe_allow_html=True)
         
         profile_data = {
             "Metric": ["Age", "Tenure", "Usage Frequency", "Support Calls", "Payment Delay", "Total Spend", "Last Interaction"],
@@ -503,7 +503,7 @@ if predict_button:
 
 # Sidebar with additional information
 with st.sidebar:
-    st.markdown("<h1 style='text-align: center;'>ℹ️ Dashboard Info</h1>", unsafe_allow_html=True)
+    st.markdown("<h1 style='text-align: center;'>Dashboard Info</h1>", unsafe_allow_html=True)
     
     st.markdown("""
     <div class='dark-info-box'>
@@ -511,7 +511,7 @@ with st.sidebar:
     </div>
     """, unsafe_allow_html=True)
     
-    st.markdown("### 🎯 Model Performance")
+    st.markdown("### Model Performance")
     perf_col1, perf_col2 = st.columns(2)
     with perf_col1:
         st.markdown("<span class='badge'>Accuracy: 93%</span>", unsafe_allow_html=True)
@@ -522,17 +522,17 @@ with st.sidebar:
     
     st.divider()
     
-    st.markdown("### 📖 Quick Guide")
+    st.markdown("### Quick Guide")
     st.markdown("""
-    1. 📝 Enter customer details
-    2. 🔮 Click prediction button
-    3. 📊 Review risk assessment
-    4. 🎯 Execute retention strategy
+    1. Enter customer details
+    2. Click prediction button
+    3. Review risk assessment
+    4. Execute retention strategy
     """)
     
     st.divider()
     
-    st.markdown("### 🎨 Feature Guide")
+    st.markdown("### Feature Guide")
     with st.expander("View Details"):
         st.markdown("""
         - **Tenure**: Relationship duration
@@ -548,10 +548,10 @@ with st.sidebar:
     st.markdown("""
     <div class='dark-info-box' style='text-align: center;'>
     <p style='margin: 0; font-size: 0.9rem;'>
-    Built with ❤️ using Streamlit & XGBoost 
+    Built using Streamlit & XGBoost 
     </p>
     <p style='margin: 0; font-size: 0.9rem;'> 
-    by - Ayush Goswami
+    Project by - Ayush Goswami
     </p>
     </div>
     """, unsafe_allow_html=True)
