@@ -548,7 +548,10 @@ with st.sidebar:
     st.markdown("""
     <div class='dark-info-box' style='text-align: center;'>
     <p style='margin: 0; font-size: 0.9rem;'> 
-    Project by - Ayush Goswami
+    Project by -
+    </p>
+    <p style='margin: 0; font-size: 0.9rem;'> 
+    Ayush Goswami
     </p>
     </div>
     """, unsafe_allow_html=True)
